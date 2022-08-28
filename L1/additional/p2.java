@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class p2{
 	static int findSum(int n){
-		int rem,i,sum=0,c;
-		boolean flag;
+		int rem,sum=0,c;
+
 		c=n;
 		while(c!=0){
 			rem = c%10;
