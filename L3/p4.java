@@ -1,11 +1,13 @@
+import java.util.Scanner;
+
 class Stack{
     int arr[];
     int top;
-    int capacity;
+    int length;
 
     Stack(int size){
         arr = new int[size];
-        capacity = size;
+        length = size;
         top = -1;
     }
 
@@ -17,9 +19,8 @@ class Stack{
     }
 
     void push(int x){
-        if(top == capacity-1){
+        if(top == length-1){
             System.out.println("Overflow!! Cannot push");
-            System.exit(1);
         }
         else{
             arr[++top] = x;
@@ -28,34 +29,68 @@ class Stack{
 
     int pop(){
         if(isEmpty()){
-            System.out.println("Underflow!! Cannot pop");
-            System.exit(1);
+            return -1;
         }
         System.out.println("After Popping:");
-        return arr[top--];
+        return arr[top--];  
     }
 
     void display() {
         int i;
         if(isEmpty()){
             System.out.println("Stack is empty!!");
-            System.exit(1);
         }
-        for (i = 0; i <= top; i++) {
-          System.out.print(arr[i] + " ");
+        else{
+            System.out.println("Displaying Stack");
+            for (i = 0; i <= top; i++) {
+                System.out.print(arr[i] + " ");
+            } 
+            System.out.println(); 
         }
+        
       }
 }
 
 class p4{
     public static void main(String args[]){
-        Stack s = new Stack(5);
-        s.push(4);
-        s.push(2);
-        s.push(1);
-        s.push(3);
-        s.push(3);
-        System.out.println("Popped element "+s.pop());
-        s.display();
+        Scanner scanner = new Scanner(System.in);
+        int n,choice,ele;
+        boolean exit = false;
+        System.out.println("Enter the size of stack");
+        n = scanner.nextInt();
+        Stack s = new Stack(n);
+        while(!exit){
+            System.out.println("Enter your choice");
+            System.out.println("1.Push");
+            System.out.println("2.Pop");
+            System.out.println("3.Display");
+            System.out.println("4.Exit");
+            choice = scanner.nextInt();
+            if(choice == 1){
+                System.out.println("Enter the element to push:");
+                ele = scanner.nextInt();
+                s.push(ele);
+            }
+            else if(choice == 2){
+                ele = s.pop();
+                if(ele == -1){
+                    System.out.println("Underflow!! Cannot pop");
+                }
+                else{
+                    System.out.println(ele);
+                }
+            }
+            else if(choice == 3){
+                s.display();
+            }
+            else if(choice == 4){
+                System.out.println("Exiting !!");
+                exit = true;
+            }
+            else{
+                System.out.println("Invalid Choice");
+            }
+        }
+
     }
 }

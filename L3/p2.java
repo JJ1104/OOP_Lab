@@ -19,25 +19,45 @@ class Time{
 		result.hours = x.hours + y.hours;
 		result.minutes = x.minutes + y.minutes;
 		result.seconds = x.seconds + y.seconds;
-		while(result.seconds>59 || result.minutes>59){
-			if(result.seconds>59){
-				result.seconds -=60;
-				result.minutes++;
-			}
-			else if(result.minutes>59){
-				result.minutes -= 60;
-				result.hours++;
-			}
-			
+		if(result.seconds>59){
+			result.seconds -=60;
+			result.minutes++;
 		}
+		if(result.minutes>59){
+			result.minutes -= 60;
+			result.hours++;
+		}
+		if(result.hours>24){
+			result.hours = result.hours-24;
+		}
+			
 		return result; 
 	}
 
 	Time subtractTime(Time x, Time y){
 		Time result = new Time();
-		result.hours = Math.abs(x.hours - y.hours);
-		result.minutes = Math.abs(x.minutes - y.minutes);
-		result.seconds = Math.abs(x.seconds - y.seconds);
+		if(x.seconds<y.seconds){
+			x.minutes--;
+			x.seconds+=60;
+			result.seconds = x.seconds - y.seconds;
+		}
+		else{
+			result.seconds = x.seconds - y.seconds;
+		}
+		if(x.minutes<y.minutes){
+			x.hours--;
+			x.minutes +=60;
+			result.minutes = x.minutes - y.minutes;
+		}
+		else{
+			result.minutes = x.minutes - y.minutes;
+		}
+		if(x.hours<y.hours){
+			System.out.println("Cannot Subract");
+		}
+		else{
+			result.hours = x.hours - y.hours;
+		}
 		return result; 
 	}
 
@@ -62,9 +82,9 @@ class p2{
 		Time t1 = new Time();
 		Time t2 = new Time();
 		Time result = new Time();
-		t1.setValue(12,54,23);
+		t1.setValue(16,34,13);
 		t1.displayTime();
-		t2.setValue(14,34,21);
+		t2.setValue(14,54,21);
 		t2.displayTime();
 		System.out.println("Adding t1 and t2:");
 		result = result.addTime(t1,t2);
@@ -74,7 +94,7 @@ class p2{
 		result.displayTime();
 		System.out.println("Comparing t1 and t2");
 		Time.compareTime(t1,t2);
-		t2.setValue(12,54,23);
+		t2.setValue(22,54,23);
 		t2.displayTime();
 		System.out.println("Comparing t1 and t2");
 		Time.compareTime(t1,t2);

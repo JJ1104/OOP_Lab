@@ -8,18 +8,19 @@ class Complex{
 	}
 
 	void displayComplex(){
-		System.out.println(a+"+i"+b);
+		System.out.println(a+"+"+b+"i");
 	}
 
 	Complex addComplex(Complex x, Complex y ){
 		Complex result = new Complex();
+		System.out.println("Adding Complex:");
 		result.a = x.a + y.a;
 		result.b = x.b + y.b;
 		return result;
 	}
 	Complex subtractComplex(Complex x, Complex y ){
 		Complex result = new Complex();
-		
+		System.out.println("Subtracting Complex:");
 		result.a = x.a - y.a;
 		result.b = x.b - y.b;
 		return result;
