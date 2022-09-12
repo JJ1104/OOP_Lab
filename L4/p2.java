@@ -100,7 +100,5 @@ class p2{
 		result.displayTime();
 		System.out.println("Comparing t1 and t2");
 		Time.compareTime(t1,t2);
-		System.out.println("Comparing t1 and t2");
-		Time.compareTime(t1,t2);
 	}
 }
