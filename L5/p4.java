@@ -10,6 +10,7 @@ class p4{
 		str = sc.next();
 		n = str.length();
 		int count = n%3;
+		count = (count == 0)?3:n%3;
 		for(i=0;i<n;i++){
 			if(start == n){
 				break;
@@ -24,10 +25,8 @@ class p4{
 				}
 				System.out.print(',');
 				count = 3;
-			}
-			
+			}			
 		}
 		System.out.println();
-
 	}
 }
