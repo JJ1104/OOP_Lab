@@ -168,22 +168,22 @@ class p123{
 		}
 		///////////////////////////
 		// Part - 2
-		// Student.sort(starr,n);
-		// for(i=0;i<n;i++){
-		// 	starr[i].display();
-		// }
+		Student.sort(starr,n);
+		for(i=0;i<n;i++){
+			starr[i].display();
+		}
 		///////////////////////////
 		// Part - 3A
-		// Student.name_char(starr,n);
+		Student.name_char(starr,n);
 		///////////////////////////
 		// Part - 3B
 		Student.name_substr(starr,n);
 		///////////////////////////
 		// Part - 3C
-		// Student.change_initial(starr,n);
-		// for(i=0;i<n;i++){
-		// 	starr[i].display();
-		// }
+		Student.change_initial(starr,n);
+		for(i=0;i<n;i++){
+			starr[i].display();
+		}
 		///////////////////////////
 	}
 }
