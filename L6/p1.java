@@ -28,20 +28,7 @@ class CollegeGraduate extends Person{
 
 class p1{
 	public static void main(String args[]){
-		int year,month,day,grad_year;
-		float gpa;
-		String name;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the name:");
-		name = sc.nextLine();
-		System.out.println("Enter the DOB(DD/MM/YYYY):");
-		day = sc.nextInt();
-		month = sc.nextInt();
-		year = sc.nextInt();
-		System.out.println("Enter the GPA and year of graduation:");
-		gpa = sc.nextFloat();
-		grad_year = sc.nextInt();
-		CollegeGraduate cg = new CollegeGraduate(name,year,month,day,gpa,grad_year);
+		CollegeGraduate cg = new CollegeGraduate("Jithin",2003,04,11,5,2025);
 		cg.getName();
 		cg.getDOB();
 		cg.getGPA();
